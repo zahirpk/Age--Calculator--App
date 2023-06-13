@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+
+<body>
+
+  <main class="flex-container">
+    <div class="inputFields">
+      <div class="field"><label for="day" id="dayLabel">Day</label>
+        <input 
+        type="text" 
+        placeholder="DD" 
+        id="day" 
+        maxlength="2"
+        required>
+      <div class="errorMsgForDay"></div>
+      </div>
+      <div class="field"><label for="month" id="monthLabel">Month</label>
+        <input 
+        type="text" 
+        placeholder="MM" 
+        id="month" 
+        maxlength="2"
+        required>
+        <div class="errorMsgForMonth"></div>
+      </div>
+      <div class="field"><label for="year" id="yearLabel">Year</label>
+        <input 
+        type="text" 
+        placeholder="YYYY" 
+        id="year"
+        maxlength="4" 
+        required>
+        <div class="errorMsgForYear"></div>
+      </div>
+    </div>
+    <hr>
+    <div class="myBtn"  id="btn">
+      <div class="svg_image">
+        <img src="assets/images/icon-arrow.svg" alt="">
+      </div>
+    </div>
+
+    <div class="textField">
+      <div><span class="total_Number_Of_Years"> — — </span>&nbsp; years</div>
+      <div><span class="total_Number_Of_Months"> — — </span>&nbsp;months</div>
+      <div><span class="total_Number_Of_Days"> — — </span>&nbsp;days</div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
