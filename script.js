@@ -154,78 +154,68 @@ function validateInput() {
          ageInMonth = currentMonth - parseMonthValue;
          ageInDay = currentDay - parseDayValue;
 
-        if((parseMonthValue>currentMonth||parseMonthValue===currentMonth)&&currentYear>parseYearValue){
-          if(parseDayValue>currentMonth){
-            ageInYear--
-            if (ageInYear === -1) {
-                ageInYear = 0;
-              }
-              ageInMonth=12+ageInMonth;
-              ageInMonth--
-              if (ageInMonth === -1) {
-                  ageInMonth = 0;
-              }
-              ageInDay = days_In_Months_Of_Year[currentMonth - 1] + ageInDay;
+         /* if block if currentYear greater than parseYear */
+        if(currentYear>parseYearValue&&currentMonth>parseMonthValue&&currentDay<parseDayValue){
 
-          }
-        } else if(parseMonthValue<currentMonth &&currentYear>parseYearValue){
-          if(parseDayValue>currentMonth){
-
-    
-              ageInMonth--
-              if (ageInMonth === -1) {
-                  ageInMonth = 0;
-              }
-              ageInDay = days_In_Months_Of_Year[currentMonth - 1] + ageInDay;
-
-          }
-        }else if((currentMonth<parseMonthValue)&&(currentDay<parseDayValue)&&currentYear>parseYearValue){
-          ageInYear--
-          if(ageInYear===-1){
-            ageInYear=0;
-          }
-          ageInMonth--;
+          ageInMonth--
           ageInDay = days_In_Months_Of_Year[currentMonth - 1] + ageInDay;
-          ageInDay++
 
-        }else if((currentMonth>parseMonthValue)&&(currentDay<parseDayValue)&&currentYear===parseYearValue){
-          
+         }
+         else if(currentYear>parseYearValue&&currentMonth<parseMonthValue&&currentDay>parseDayValue){
+          ageInMonth=12+ageInMonth;
+          ageInYear--;
+         }else if(currentYear>parseYearValue&&currentMonth<parseMonthValue&&currentDay<parseDayValue){
           ageInYear--
-          if(ageInYear===-1){
-            ageInYear=0;
-          }
-          ageInMonth--;
-          if(ageInMonth===-1){
-            ageInMonth=0;
-          }
+          ageInMonth=12+ageInMonth;
+          ageInMonth--
           ageInDay = days_In_Months_Of_Year[currentMonth - 1] + ageInDay;
-          ageInDay++
+         }else if(currentYear>parseYearValue&&currentMonth===parseMonthValue&&currentDay<parseDayValue){
+          ageInMonth=11;
+          ageInDay = days_In_Months_Of_Year[currentMonth - 1] + ageInDay;
+         }
 
-        }else if((currentMonth<parseMonthValue)&&(currentDay<parseDayValue)&&currentYear===parseYearValue){
+         /* if block if currentYear equal than parseYear */
+
+         if(currentYear===parseYearValue&&currentMonth>parseMonthValue&&currentDay<parseDayValue){
+
+          ageInDay = days_In_Months_Of_Year[currentMonth - 1] + ageInDay;
+          ageInMonth--
+         }
+         else if(currentYear===parseYearValue&&currentMonth<parseMonthValue&&currentDay>parseDayValue){
           emptyMonthInput.innerHTML = "Must be in the past month";
           monthlabel.style.color = "red";
           ageInDay= "— — ";
           ageInMonth="— —";
           ageInYear="— —"; 
+          
+         }else if(currentYear===parseYearValue&&currentMonth<parseMonthValue&&currentDay<parseDayValue){
+          emptyDayInput.innerHTML = "Must be in the valid day";
+          daylabel.style.color = "red";
+          monthlabel.style.color = "red";
+          yearlabel.style.color = "red";
+          ageInDay= "— — ";
+          ageInMonth="— —";
+          ageInYear="— —"; 
+          
+         }else if(currentYear===parseYearValue&&currentMonth===parseMonthValue&&currentDay<parseDayValue){
+          
+          emptyDayInput.innerHTML = "Must be in the valid day";
+          daylabel.style.color = "red";
+          monthlabel.style.color = "red";
+          yearlabel.style.color = "red";
+          ageInDay= "— — ";
+          ageInMonth="— —";
+          ageInYear="— —"; 
+         }
 
-        }
-        else if(parseMonthValue===currentMonth&&parseYearValue===currentYear&&(parseMonthValue===currentDay||parseDayValue>currentDay)){
-            emptyDayInput.innerHTML = "Must be in the past day";
-            daylabel.style.color = "red";
-            ageInDay= "— — ";
-            ageInMonth="— —";
-            ageInYear="— —";   
-        }
-      }
-      total_Number_Of_Years.innerHTML = ageInYear;
-      total_Number_Of_Month.innerHTML = ageInMonth;
-      total_Number_Of_Days.innerHTML = ageInDay;
-
+          total_Number_Of_Years.innerHTML = ageInYear;
+          total_Number_Of_Month.innerHTML = ageInMonth;
+          total_Number_Of_Days.innerHTML = ageInDay;
     }
-  } else {
-    console.log("end of second if else");
-  }
-}
+      }
+
+  } 
+} /* end of function */
 
 
 
