@@ -223,7 +223,7 @@ function validateInput() {
       }
 
   } 
-} /* end of function */
+} 
 
 
 
