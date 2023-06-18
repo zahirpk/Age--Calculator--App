@@ -98,7 +98,6 @@ function checkEmptyField() {
 }
 
 
-
 function validateInput() {
 
 
@@ -198,6 +197,15 @@ function validateInput() {
           ageInYear="— —"; 
           
          }else if(currentYear===parseYearValue&&currentMonth===parseMonthValue&&currentDay<parseDayValue){
+          
+          emptyDayInput.innerHTML = "Must be in the valid day";
+          daylabel.style.color = "red";
+          monthlabel.style.color = "red";
+          yearlabel.style.color = "red";
+          ageInDay= "— — ";
+          ageInMonth="— —";
+          ageInYear="— —"; 
+         }else if(isNaN(parseYearValue)||isNaN(parseMonthValue)||isNaN(parseDayValue)){
           
           emptyDayInput.innerHTML = "Must be in the valid day";
           daylabel.style.color = "red";
