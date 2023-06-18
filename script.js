@@ -181,14 +181,14 @@ function validateInput() {
           ageInMonth--
          }
          else if(currentYear===parseYearValue&&currentMonth<parseMonthValue&&currentDay>parseDayValue){
-          emptyMonthInput.innerHTML = "Must be in the past month";
+          emptyMonthInput.innerHTML = "Must be a valid month";
           monthlabel.style.color = "red";
           ageInDay= "— — ";
           ageInMonth="— —";
           ageInYear="— —"; 
           
          }else if(currentYear===parseYearValue&&currentMonth<parseMonthValue&&currentDay<parseDayValue){
-          emptyDayInput.innerHTML = "Must be in the valid day";
+          emptyDayInput.innerHTML = "Must be a valid day";
           daylabel.style.color = "red";
           monthlabel.style.color = "red";
           yearlabel.style.color = "red";
@@ -198,7 +198,7 @@ function validateInput() {
           
          }else if(currentYear===parseYearValue&&currentMonth===parseMonthValue&&currentDay<parseDayValue){
           
-          emptyDayInput.innerHTML = "Must be in the valid day";
+          emptyDayInput.innerHTML = "Must be a valid day";
           daylabel.style.color = "red";
           monthlabel.style.color = "red";
           yearlabel.style.color = "red";
@@ -207,7 +207,7 @@ function validateInput() {
           ageInYear="— —"; 
          }else if(isNaN(parseYearValue)||isNaN(parseMonthValue)||isNaN(parseDayValue)){
           
-          emptyDayInput.innerHTML = "Must be in the valid day";
+          emptyDayInput.innerHTML = "Must be a valid day";
           daylabel.style.color = "red";
           monthlabel.style.color = "red";
           yearlabel.style.color = "red";

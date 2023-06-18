@@ -153,7 +153,7 @@ span {
     justify-content: flex-end;
   }
   .errorMsgForDay,.errorMsgForMonth,.errorMsgForYear{
-    font-size: 0.38em;
+    font-size: 0.36em;
   }
 }
 @media(min-width:90em){
